@@ -1,0 +1,64 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="photo">
+    <meta name="author" content="Shivangi Gupta">
+    <title>Online Photo management system</title>
+    <!-- Bootstrap -->
+    
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/my.css" rel="stylesheet">
+
+    <style>  
+        @media only screen and (width: 768px) { body{margin-top:150px;}}
+        @media only screen and (max-width: 760px) { #books .row{margin-top:10px;}}
+        .tag {display:inline;float:left;padding:2px 5px;width:auto;background:#F5A623;color:#fff;height:23px;}
+        .tag-side{display:inline;float:left;}
+        #books {border:1px solid #DEEAEE; margin-bottom:20px;padding-top:30px;padding-bottom:20px;background:#fff; margin-left:10%;margin-right:10%;}
+        #description {border:1px solid #DEEAEE; margin-bottom:20px;padding:20px 50px;background:#fff;margin-left:10%;margin-right:10%;}
+        #description hr{margin:auto;}
+        #service{background:#fff;padding:20px 10px;width:112%;margin-left:-6%;margin-right:-6%;}
+        .glyphicon {color:#D67B22;}
+    </style>
+
+</head>
+<body>
+   {{>nav}}
+ 
+
+      <div class="container-fluid" id="description">
+    <div class="row">
+      <h2> Add New Post </h2> 
+        <form action="/new" method="POST">
+            <label for="title">Post Title:</label> <br>
+            <input type="text" name="title" required><br><br>
+                    
+            <label for="file-select">Image Upload:</label>  <br>
+            <input type="file" name="img_url" id="file-select"> <br><br>
+
+            <label for="address">Description:</label>   <br>
+            <textarea rows="3" cols="30" name="description" id="description"></textarea> <br>
+
+
+            <input type="submit" value="Submit" class="btn btn-dark">
+         </form>
+    </div>
+  </div>
+</div>
+
+{{>footer}}
+ 
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>       

@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{>header}}
+</head>
+<body>
+ 
+{{>nav}}
+
+  <div id="top" >
+      <div id="searchbox" class="container-fluid" style="width:112%;margin-left:-6%;margin-right:-6%;">
+          <div>
+              <form role="search" method="POST" action="#">
+                  <input type="text" class="form-control" name="keyword" style="width:80%;margin:20px 10% 20px 10%;" placeholder="Search for a post">
+              </form>
+          </div>
+      </div>
+
+  <div class="container-fluid text-center" id="new">
+  <h3 style="color:#D67B22;"> POPULAR POSTS </h3>
+      <div class="row">
+
+       {{#blogPost}}
+          <div class="col-sm-6 col-md-3 col-lg-3">
+           <a href="Post/{{id}}">
+              <div class="book-block">
+                  <div class="tag">New</div>
+                  <div class="tag-side"><img src="images/tag.png"></div>
+                  <img class="book block-center img-responsive" src="{{img_url}}">
+                  <hr>
+                 {{title}}
+              </div>
+            </a>
+          </div>
+      {{/blogPost}}
+       
+
+
+      </div>
+  </div>
+
+
+  {{>footer}}
+
+<div class="container">
+  <!-- Trigger the modal with a button -->
+  <button type="button" id="query_button" class="btn btn-lg" data-toggle="modal" data-target="#query">Ask query</button>
+  <!-- Modal -->
+  <div class="modal fade" id="query" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header text-center">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Ask your query here</h4>
+          </div>
+          <div class="modal-body">           
+                    <form method="post" action="query.php" class="form" role="form">
+                        <div class="form-group">
+                             <label class="sr-only" for="name">Name</label>
+                             <input type="text" class="form-control"  placeholder="Your Name" name="sender" required>
+                        </div>
+                        <div class="form-group">
+                             <label class="sr-only" for="email">Email</label>
+                             <input type="email" class="form-control" placeholder="abc@gmail.com" name="senderEmail" required>
+                        </div>
+                        <div class="form-group">
+                             <label class="sr-only" for="query">Message</label>
+                             <textarea class="form-control" rows="5" cols="30" name="message" placeholder="Your Query" required></textarea>
+                        </div>
+                        <div class="form-group">
+                              <button type="submit" name="submit" value="query" class="btn btn-block">
+                                                              Send Query
+                               </button>
+                        </div>
+                    </form>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+      </div>
+    </div>  
+  </div>
+</div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>	

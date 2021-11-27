@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/Form.css">
+    <script defer type="text/javascript" src="../js/Registration.js"></script>
+    <title>Registration</title>
+</head>
+<header class="register-pos">
+    <h1>Registration Form</h1>
+</header>
+<body onload='document.form1.text1.focus()'>
+<div class="register-background">
+
+    <form name="myForm" action="/Register" method="POST">
+        <strong>
+            <label>Username </label>
+            <input type='text' name='username' placeholder="Username" required/>
+
+            <br>
+            <br>
+
+            <label>Email</label>
+            <input type='text' name='email' placeholder="Email" required/>
+
+            <br>
+            <br>
+
+            <label>Password</label>
+            <input type='password' name='password' placeholder="Password" required/>
+
+            <br>
+            <br>
+
+            <label>Confirm Password</label>
+            <input type='password' name='cpassword' placeholder="Confirm Password" required/>
+
+            <br>
+            <br>
+{{! 
+            <label id="radio" class="Text">Are you age of 13+ years</label>
+            <input type="radio" name="yes_no" required>Yes</input>
+            <input type="radio" name="yes_no" required>No</input>
+            <br>
+            <br>
+            <input type="checkbox" required><a href="TOS">Terms of Conditions</a>
+            <br>
+            <input type="checkbox" required><a href="Privacy">Privacy Rules</a>
+            <br> }}
+     <label>Have an Account?</label> <a href="/Login"> Login</a>
+            <br>
+
+        </strong>
+        <input type="submit" name="submit" class="button" value="Submit" />
+        {{! <input type="submit" name="submit" class="button" value="Reset" /> }}
+
+    </form>
+
+</div>
+
+</body>
+</html>

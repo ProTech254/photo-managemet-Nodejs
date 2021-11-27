@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/Form.css">
+    <title>View Post</title>
+</head>
+<header class="view-pos">
+    <h2 class="view-titleBack">Post View</h2>
+</header>
+<body>
+
+<form action="ViewPost.hbs">
+      {{#selectPost}}
+    <img src="../{{img_url}}" alt="View Image" height="350" width="350">
+    <br>
+  
+    <div class="view-background">
+    <title>View Post</title>
+
+    <label><strong> Post Title: </strong> {{title}}</label>
+    <br>
+    <label><strong> Author: </strong>{{username}}</label>
+    <br>
+    <label id="date-time"> <strong> Post Creation Time:</strong> {{created}}</label>
+
+    <input type="time" id="post" name="post" min="00:00" max="24:00" class="Input">
+
+    </div>
+    {{/selectPost}}
+</form>
+</body>
+</html>

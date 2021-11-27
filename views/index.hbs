@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="photo">
+    <meta name="author" content="Shivangi Gupta">
+    <title>Online Photo management system</title>
+    <!-- Bootstrap -->
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/my.css" rel="stylesheet">
+    <style>
+      .modal-header {background:#D67B22;color:#fff;font-weight:800;}
+      .modal-body{font-weight:800;}
+      .modal-body ul{list-style:none;}
+      .modal .btn {background:#D67B22;color:#fff;}
+      .modal a{color:#D67B22;}
+      .modal-backdrop {position:inherit !important;}
+       #login_button,#register_button{background:none;color:#D67B22!important;}       
+       #query_button {position:fixed;right:0px;bottom:0px;padding:10px 80px;
+                      background-color:#D67B22;color:#fff;border-color:#f05f40;border-radius:2px;}
+  	@media(max-width:767px){
+        #query_button {padding: 5px 20px;}
+  	}
+    </style>
+</head>
+<body>
+ 
+  <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/" style="padding: 10px; font-size:25px; margin-left:35px">Photo Management System</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <ul class="nav navbar-nav navbar-right" style="margin-right:50px">
+
+     
+        
+    <li>    <a class="btn btn-lg" href="/Login" >Login</a></li>
+
+          <li>    <a class="btn btn-lg" href="/Registration" >Sign up</a></li>
+      
+        
+      
+     <li>  <a  href="/Newpost" class="btn btn-lg btn-success" style="color:white;text-decoration:none;"> 
+                                    Add New Post  
+                                 </a></li>
+
+                                      {{! <li>    <a class="btn btn-lg" href="/Login" >Logout</a></li> }}
+          </ul>
+                
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+
+  
+      <div id="searchbox" class="container-fluid" style="width:112%;margin-left:-6%;margin-right:-6%;">
+          <div>
+              <form role="search" method="POST" action="#">
+                  <input type="text" class="form-control" name="keyword" style="width:80%;margin:20px 10% 20px 10%;" placeholder="Search for a post">
+              </form>
+          </div>
+      </div>
+
+  <div class="container-fluid text-center" id="new">
+  <h3 style="color:#D67B22;"> POPULAR POSTS </h3>
+      <div class="row">
+{{#blogPost}}
+          <div class="col-sm-6 col-md-3 col-lg-3">
+           <a href="ViewPost/{{id}}">
+              <div class="book-block">
+                  <div class="tag">New</div>
+                  <div class="tag-side"><img src="images/tag.png"></div>
+                  <img class="book block-center img-responsive" src="{{img_url}}">
+                  <hr>
+                {{title}}
+              </div>
+            </a>
+          </div>
+   {{/blogPost}}
+       
+
+
+      </div>
+  </div>
+
+<footer style="margin-left:-6%;margin-right:-6%;">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-sm-1 col-md-1 col-lg-1">
+              </div>
+              <div class="col-sm-7 col-md-5 col-lg-5">
+                  <div class="row text-center">
+                      <h2>Let's Get In Touch!</h2>
+                      <hr class="primary">
+                      <p>Still Confused? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6 text-center">
+                          <span class="glyphicon glyphicon-earphone"></span>
+                          <p>123-456-6789</p>
+                      </div>
+                      <div class="col-md-6 text-center">
+                          <span class="glyphicon glyphicon-envelope"></span>
+                          <p>photomanagement@gmail.com</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="hidden-sm-down col-md-2 col-lg-2">
+              </div>
+              <div class="col-sm-4 col-md-3 col-lg-3 text-center">
+                  <h2 style="color:#D67B22;">Follow Us At</h2>
+                  <div>
+                      <a href="#">
+                      <img title="Twitter" alt="Twitter" src="images/social/twitter.png" width="35" height="35" />
+                      </a>
+                      <a href="#">
+                      <img title="LinkedIn" alt="LinkedIn" src="images/social/linkedin.png" width="35" height="35" />
+                      </a>
+                      <a href="#">
+                      <img title="Facebook" alt="Facebook" src="images/social/facebook.png" width="35" height="35" />
+                      </a>
+                      <a href="#">
+                      <img title="google+" alt="google+" src="images/social/google.jpg" width="35" height="35" />
+                      </a>
+                      <a href="#">
+                      <img title="Pinterest" alt="Pinterest" src="images/social/pinterest.jpg" width="35" height="35" />
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+
+<div class="container">
+  <!-- Trigger the modal with a button -->
+  <button type="button" id="query_button" class="btn btn-lg" data-toggle="modal" data-target="#query">Ask query</button>
+  <!-- Modal -->
+  <div class="modal fade" id="query" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header text-center">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Ask your query here</h4>
+          </div>
+          <div class="modal-body">           
+                    <form method="post" action="query.php" class="form" role="form">
+                        <div class="form-group">
+                             <label class="sr-only" for="name">Name</label>
+                             <input type="text" class="form-control"  placeholder="Your Name" name="sender" required>
+                        </div>
+                        <div class="form-group">
+                             <label class="sr-only" for="email">Email</label>
+                             <input type="email" class="form-control" placeholder="abc@gmail.com" name="senderEmail" required>
+                        </div>
+                        <div class="form-group">
+                             <label class="sr-only" for="query">Message</label>
+                             <textarea class="form-control" rows="5" cols="30" name="message" placeholder="Your Query" required></textarea>
+                        </div>
+                        <div class="form-group">
+                              <button type="submit" name="submit" value="query" class="btn btn-block">
+                                                              Send Query
+                               </button>
+                        </div>
+                    </form>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+      </div>
+    </div>  
+  </div>
+</div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>	
+
+
+
+
+
+
+
+
+

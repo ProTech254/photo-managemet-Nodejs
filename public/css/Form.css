@@ -1,0 +1,97 @@
+header {
+    font-size: 16px;
+    font-family: "Times New Roman";
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 60px;
+    color: black;
+}
+
+.sign-pos{
+    position: relative;
+    top: -80px;
+    right: -300px;
+}
+.register-pos{
+    position: relative;
+    top: -140px;
+    right: -400px;
+}
+
+.post-pos{
+    position: relative;
+    top: -110px;
+    right: -350px;
+}
+
+.view-pos{
+    position: relative;
+    top: -220px;
+    right: -250px;
+}
+
+*{
+    text-align: center;
+
+}
+
+.sign-background{
+    width: 350px;
+    background-color: lightblue;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.register-background{
+    width: 410px;
+    background-color: lightblue;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.post-background{
+    width: 410px;
+    background-color: lightblue;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.view-titleBack{
+    width: 120px;
+    background-color: lightblue;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.view-background{
+    width: 300px;
+    background-color: lightblue;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url("https://miro.medium.com/max/1400/1*xMuIOwjliGUPjkzukeWKfw.jpeg");
+
+}
+
+.Input{
+    font-size: 20px;
+}
+
+.button {
+    background-color: saddlebrown;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+

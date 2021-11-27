@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cart">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="author" content="Shivangi Gupta">
+    <title>order</title>
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/my.css" rel="stylesheet">
+    <style>
+        #cart {margin-top:30px;margin-bottom:30px;}
+        .panel {border:1px solid #D67B22;padding-left:0px;padding-right:0px;}
+        .panel-heading {background:#D67B22 !important;color:white !important;}        
+        @media only screen and (width: 767px) { body{margin-top:150px;}}
+    </style>
+
+</head>
+<body>
+  {{>nav}}
+  <div id="top" >
+      <div id="searchbox" class="container-fluid" style="width:112%;margin-left:-6%;margin-right:-6%;">
+          <div>
+              <form role="search" method="POST" action="Result.php">
+                  <input type="text" class="form-control" name="keyword" style="width:80%;margin:20px 10% 20px 10%;" placeholder="Search for a post">
+              </form>
+          </div>
+      </div>
+
+
+	<div class="container-fluid" id="cart">
+      <div class="row">
+          <div class="col-xs-12 text-center" id="heading">
+                 <h2 style="color:#D67B22;text-transform:uppercase;">  Successfully Deleted the post </h2>
+           </div>
+        </div> 
+                       
+                         <div class="row">
+                             <div class="col-xs-9 col-xs-offset-3 col-sm-2 col-sm-offset-5 col-md-2 col-md-offset-5">
+                                  <a href="/" class="btn btn-lg" style="background:#D67B22;color:white;font-weight:800;">Check Out other post</a>
+                             </div>
+                          </div></div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+</body>
+<html>		
