@@ -137,8 +137,8 @@ router.post('/Update/:id', (req,res,next ) => {
 
 // Update method for /edit page
 router.post('/new', (req,res,next ) => {
-  DB.query('INSERT INTO posts(title, img_url, description, created) VALUES(?, ?, ?, NOW())',
-  [req.body.title, req.body.img_url, req.body.description], (err) => {
+  DB.query('INSERT INTO posts(title, img_url, description, username, created) VALUES(?, ?, ?, ?, NOW())',
+  [req.body.title, req.body.img_url, req.body.description, req.body.username], (err) => {
     if(err){
       console.log(err)
     }else{
