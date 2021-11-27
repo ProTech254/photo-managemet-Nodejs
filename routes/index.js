@@ -85,7 +85,7 @@ router.post('/Register', (req,res,next) => {
   }
 });
 router.get('/Newpost', (req,res,next) => {
-  res.render('Addpost');
+  res.render('PostImage');
 });
 
  // viewing the post

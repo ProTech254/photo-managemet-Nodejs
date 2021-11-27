@@ -12,17 +12,17 @@
 <body>
 <strong>
 <div class="post-background">
-<form action="PostImage.hbs">
+<form action="/new" method="POST">
     <label> Image Title</label>
-    <input title="img title" class="Input" required>
+    <input title="img title" class="Input" name="title" required>
 <br>
     <br>
     <label> Description</label>
-    <textarea id="text" class="Input" required></textarea>
+    <textarea id="text" class="Input" name="description" required></textarea>
 <br>
     <br>
     <label>Browse Images here:</label>
-    <input type="file" required>
+    <input type="file" name="img_url"required>
 <br>
         <br>
 
