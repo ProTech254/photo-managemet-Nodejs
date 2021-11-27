@@ -26,6 +26,16 @@
 
     <input type="time" id="post" name="post" min="00:00" max="24:00" class="Input">
 
+    <br><br>
+              <a  href="/Edit/{{id}}" class="btn btn-lg btn-danger" style="padding:8px;color:white;text-decoration:none;"> 
+                                   
+                                  <strong>  Edit Post</strong>
+                                 </a> 
+
+        <a  href="/Delete/{{id}}" class="btn btn-lg btn-warning" style="padding:8px;color:white;text-decoration:none;"> 
+                                    <strong>  Delete</strong>  
+                                 </a>     
+
     </div>
     {{/selectPost}}
 </form>

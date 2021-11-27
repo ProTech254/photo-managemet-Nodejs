@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/Form.css">
+    <title>Post Image</title>
+</head>
+<header class="post-pos">
+    <h2>Post Images</h2>
+</header>
+
+<body>
+<strong>
+<div class="post-background">
+    {{#post}}
+<form action="/Update/{{id}}" method="POST">
+    <label> Image Title</label>
+    <input title="img title" class="Input" name="title" value='{{title}}' required>
+<br>
+    <br>
+    <label> Description</label>
+    <textarea id="text" class="Input" name="description" value='{{description}}' required></textarea>
+<br>
+    <br>
+    <label>Browse Images here:</label>
+    <input type="file" name="img_url" value='{{img_url}}'required>
+<br>
+    <br>
+    <label>Author:</label>
+    <input class="Input" type="text" name="username" value='{{username}}' required>
+<br>
+        <br>
+
+        <input type="checkbox" class="Input" required> <label> Accept user policy to submit Image</label>
+    <br>
+    <br>
+    <button class="button" type="submit">Submit</button>
+    <button class="button" type="reset">Reset</button>
+</form>
+
+{{/post}}
+
+</div>
+</strong>
+</body>
+</html>

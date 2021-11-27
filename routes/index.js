@@ -4,7 +4,7 @@ var router = express.Router();
 var mysql = require('mysql');
 var bcrypt = require('bcrypt');
 
-const sessions = require('express-session');
+const sessions`````` = require('express-session');
 const DB = require("../database/connection.js")
 
 
@@ -34,8 +34,8 @@ router.post('/auth', (req,res,next) => {
     if(err) throw err;
 
     if(result.length && bcrypt.compareSync(password, result[0].password)){
-      // req.session.loggedin = true;
-      // req.session.email = email;
+      req.session.loggedin = true;
+      req.session.email = email;
       res.redirect('/');
     }else{
       res.send('Incorrect Email or Password');
@@ -117,15 +117,15 @@ router.get('/Edit/:id', (req,res,next ) => {
     if(err){
       console.log(err)
     }else{
-      res.render('Edit',{post});
+      res.render('Image',{post});
     }
   } );
 });
 
 // Update method for /edit page
 router.post('/Update/:id', (req,res,next ) => {
-  DB.query(  'UPDATE posts SET title = ?, img_url = ?, description = ?  WHERE id = ?',
-  [req.body.title, req.body.img_url, req.body.description, req.params.id], (err, selectPost) => {
+  DB.query(  'UPDATE posts SET title = ?, img_url = ?, description = ? ,username = ? WHERE id = ?',
+  [req.body.title, req.body.img_url, req.body.description, req.body.username, req.params.id], (err, selectPost) => {
     if(err){
       console.log(err)
     }else{
