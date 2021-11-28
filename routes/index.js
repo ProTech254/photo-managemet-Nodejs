@@ -4,7 +4,7 @@ var router = express.Router();
 var mysql = require('mysql');
 var bcrypt = require('bcrypt');
 
-const sessions`````` = require('express-session');
+const sessions = require('express-session');
 const DB = require("../database/connection.js")
 
 
@@ -15,6 +15,16 @@ router.get('/', function(req, res, next) {
       console.log(err)
     }else{
      res.render('index', {blogPost });
+    }
+  })
+});
+
+router.get('/search', function(req, res, next) {
+  DB.query('SELECT * FROM posts', (err,blogPost) => {
+    if(err){
+      console.log(err)
+    }else{
+     res.render('search', {blogPost });
     }
   })
 });
@@ -34,8 +44,8 @@ router.post('/auth', (req,res,next) => {
     if(err) throw err;
 
     if(result.length && bcrypt.compareSync(password, result[0].password)){
-      req.session.loggedin = true;
-      req.session.email = email;
+      // request.session.loggedin = true;
+      // request.session.email = email;
       res.redirect('/');
     }else{
       res.send('Incorrect Email or Password');
